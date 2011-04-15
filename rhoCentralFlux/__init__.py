@@ -27,13 +27,13 @@
 import sys, os
 from Foam import FOAM_VERSION, FOAM_REF_VERSION, FOAM_BRANCH_VERSION
 if FOAM_REF_VERSION( "==", "010600" ):
-    from rhoCentralFLux.r1_6 import *
+    from rhoCentralFlux.r1_6 import *
     pass
 
    
 #--------------------------------------------------------------------------------------
 if FOAM_REF_VERSION( ">=", "010700" ) or FOAM_BRANCH_VERSION( "dev", ">=", "010600" ):
-    from rhoCentralFLux.r1_7_0 import *
+    from rhoCentralFlux.r1_7_0 import *
     pass
 
 

@@ -24,7 +24,7 @@
 
 
 #---------------------------------------------------------------------------
-from r1_7_0.rhoCentralFoam.BCs import rho
+from BCs import rho
 
 #---------------------------------------------------------------------------
 def _rhoBoundaryTypes( p ):
@@ -37,7 +37,7 @@ def _rhoBoundaryTypes( p ):
            rhoBoundaryTypes[patchi] = zeroGradientFvPatchScalarField.typeName
            pass
         elif pbf[patchi].fixesValue():
-           from r1_7_0.rhoCentralFoam.BCs.rho import fixedRhoFvPatchScalarField
+           from BCs.rho import fixedRhoFvPatchScalarField
            rhoBoundaryTypes[patchi] = fixedRhoFvPatchScalarField.typeName
            pass
         pass
