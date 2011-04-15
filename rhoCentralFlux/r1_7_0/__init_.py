@@ -24,7 +24,7 @@
 
 
 #---------------------------------------------------------------------------
-from Foam.applications.solvers.compressible.r1_7_0.rhoCentralFoam.BCs import rho
+from r1_7_0.rhoCentralFoam.BCs import rho
 
 #---------------------------------------------------------------------------
 def _rhoBoundaryTypes( p ):
@@ -37,7 +37,7 @@ def _rhoBoundaryTypes( p ):
            rhoBoundaryTypes[patchi] = zeroGradientFvPatchScalarField.typeName
            pass
         elif pbf[patchi].fixesValue():
-           from Foam.applications.solvers.compressible.r1_7_0.rhoCentralFoam.BCs.rho import fixedRhoFvPatchScalarField
+           from r1_7_0.rhoCentralFoam.BCs.rho import fixedRhoFvPatchScalarField
            rhoBoundaryTypes[patchi] = fixedRhoFvPatchScalarField.typeName
            pass
         pass
@@ -350,17 +350,12 @@ from Foam import FOAM_REF_VERSION, FOAM_BRANCH_VERSION
 if FOAM_REF_VERSION( ">=", "010700" ) or FOAM_BRANCH_VERSION( "dev", ">=", "010600" ):
    if __name__ == "__main__" :
       argv = sys.argv
-      if len(argv) > 1 and argv[ 1 ] == "-test":
-         argv = None
-         test_dir= os.path.join( os.environ[ "PYFOAM_TESTING_DIR" ],'cases', 'propogated', 'r1.6', 'compressible', 'rhoCentralFoam', 'forwardStep' )
-         argv = [ __file__, "-case", test_dir ]
-         pass
       os._exit( main_standalone( len( argv ), argv ) )
       pass
    pass   
 else:
    from Foam.OpenFOAM import ext_Info
    ext_Info()<< "\nTo use this solver, It is necessary to SWIG OpenFoam1.7.0 or 1.6-ext or higher \n "
-    
-#--------------------------------------------------------------------------------------
 
+   
+#--------------------------------------------------------------------------------------
