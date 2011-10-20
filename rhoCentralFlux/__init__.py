@@ -39,6 +39,12 @@ if FOAM_REF_VERSION( ">=", "010700" ) or FOAM_BRANCH_VERSION( "dev", ">=", "0106
 
 
 #----------------------------------------------------------------------------------------
+if FOAM_VERSION( ">=", "020000" ):
+    from rhoCentralFlux.r2_0_0 import *
+    pass
+
+
+#----------------------------------------------------------------------------------------
 def entry_point():
     try:
        engine = main_standalone
