@@ -184,7 +184,7 @@ def main_standalone( argc, argv ):
     
     v_zero = ref.dimensionedScalar( ref.word( "v_zero" ), ref.dimVolume / ref.dimTime, 0.0)
     
-    ref.ext_Info() << "\nStarting time loopqqqqq\n" << ref.nl
+    ref.ext_Info() << "\nStarting time loop\n" << ref.nl
     
     while runTime.run() :
         # --- upwind interpolation of primitive fields on faces
