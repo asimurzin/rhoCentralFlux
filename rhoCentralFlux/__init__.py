@@ -33,20 +33,26 @@ if FOAM_REF_VERSION( "==", "010600" ):
 
    
 #--------------------------------------------------------------------------------------
-if FOAM_REF_VERSION( ">=", "010700" ) or FOAM_BRANCH_VERSION( "dev", ">=", "010600" ):
+if FOAM_REF_VERSION( "==", "010700" ) or FOAM_REF_VERSION( "==", "010701" )or FOAM_BRANCH_VERSION( "dev", ">=", "010600" ):
     from rhoCentralFlux.r1_7_0 import *
     pass
 
 
 #----------------------------------------------------------------------------------------
-if FOAM_VERSION( ">=", "020000" ):
+if FOAM_VERSION( "==", "020000" ):
     from rhoCentralFlux.r2_0_0 import *
     pass
 
 
 #----------------------------------------------------------------------------------------
-if FOAM_VERSION( ">=", "020100" ):
+if FOAM_VERSION( "==", "020100" ):
     from rhoCentralFlux.r2_1_0 import *
+    pass
+
+
+#----------------------------------------------------------------------------------------
+if FOAM_VERSION( ">=", "020101" ):
+    from rhoCentralFlux.r2_1_1 import *
     pass
 
 
