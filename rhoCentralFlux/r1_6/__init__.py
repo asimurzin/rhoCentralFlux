@@ -25,9 +25,6 @@
 
 
 #---------------------------------------------------------------------------
-from BCs import rho
-
-#---------------------------------------------------------------------------
 def _rhoBoundaryTypes( p ):
     pbf = p.ext_boundaryField()
     rhoBoundaryTypes = pbf.types()
@@ -71,6 +68,9 @@ def readThermophysicalProperties( runTime, mesh ):
 
 #---------------------------------------------------------------------------
 def _createFields( runTime, mesh ):
+    # Load boundary condition
+    from BCs import rho
+
     from Foam.OpenFOAM import ext_Info, nl
     ext_Info() << "Reading thermophysical properties\n" << nl
     

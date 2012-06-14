@@ -25,8 +25,8 @@
 
 
 #---------------------------------------------------------------------------
-from BCs import rho
 from Foam import ref, man
+
 
 #---------------------------------------------------------------------------
 def _rhoBoundaryTypes( p ):
@@ -65,8 +65,10 @@ def readThermophysicalProperties( runTime, mesh ):
 
 #---------------------------------------------------------------------------
 def _createFields( runTime, mesh ):
+    # Load boundary condition
+    from BCs import rho
+
     ref.ext_Info() << "Reading thermophysical properties\n" << ref.nl
-    
     thermo = man.basicPsiThermo.New( mesh )
     
     p = man.volScalarField( thermo.p(), man.Deps( thermo ) )
