@@ -39,7 +39,7 @@ if FOAM_REF_VERSION( "==", "010700" ) or FOAM_REF_VERSION( "==", "010701" )or FO
 
 
 #----------------------------------------------------------------------------------------
-if FOAM_VERSION( "==", "020000" ):
+if FOAM_VERSION( "==", "020000" ) or FOAM_VERSION( "==", "020001" ):
     from rhoCentralFlux.r2_0_0 import *
     pass
 
